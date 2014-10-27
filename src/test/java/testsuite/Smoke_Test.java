@@ -25,10 +25,10 @@ public class Smoke_Test extends SmokeScenario {
     Object[][] getVenturesData() {
         return new Object[][]{
                 {"Singapore"},
-//                {"Malaysia"},
-                {"Philippines"}
-//                {"Thailand"},
-//                {"Vietnam"}
+                {"Malaysia"},
+                {"Philippines"},
+                {"Thailand"},
+                {"Vietnam"}
         };
     }
 
