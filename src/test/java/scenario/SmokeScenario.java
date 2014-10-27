@@ -10,28 +10,6 @@ import static util.Helper.*;
 
 public class SmokeScenario extends AppiumSetupTest {
 
-    protected void checkOutProductInCart() throws InterruptedException {
-        // Go to Cart from Home Page
-        find(appPackage + ":id/cart_count").click();
-        Thread.sleep(1000);
-        find(appPackage + ":id/checkout_button").click();
-        Thread.sleep(1000);
-
-        //Login to CheckOut
-        List<WebElement> editTextList = driver.findElements(By.className("android.widget.EditText"));
-        editTextList.get(0).sendKeys("qa000@mail.com");
-        editTextList.get(1).sendKeys("a12345");
-
-        driver.findElement(By.className("android.widget.CheckBox")).click();
-        find(appPackage + ":id/middle_login_button_signin").click();
-
-        Thread.sleep(2000);
-        wait_web(By.id(appPackage + ":id/rocket_app_checkoutweb"));
-        driver.findElement(By.id(appPackage + ":id/rocket_app_checkoutweb"));
-        Thread.sleep(2000);
-        back();
-    }
-
     protected void wishListNotLoginAndAddToCart(String venture, String menuWiz, String wishList, String emptyWL,
                                                 String categories, String filterWiz, String prodWiz, String addWL) throws InterruptedException {
         selectVenture(venture, menuWiz);
@@ -82,5 +60,27 @@ public class SmokeScenario extends AppiumSetupTest {
 
         //Back to Home Page :id/ic_logo
         find(appPackage + ":id/ic_logo").click();
+    }
+
+    protected void checkOutProductInCart() throws InterruptedException {
+        // Go to Cart from Home Page
+        find(appPackage + ":id/cart_count").click();
+        Thread.sleep(1000);
+        find(appPackage + ":id/checkout_button").click();
+        Thread.sleep(1000);
+
+        //Login to CheckOut
+        List<WebElement> editTextList = driver.findElements(By.className("android.widget.EditText"));
+        editTextList.get(0).sendKeys("utester@mail.com");
+        editTextList.get(1).sendKeys("a12345");
+
+        driver.findElement(By.className("android.widget.CheckBox")).click();
+        find(appPackage + ":id/middle_login_button_signin").click();
+
+        Thread.sleep(2000);
+        wait_web(By.id(appPackage + ":id/rocket_app_checkoutweb"));
+        driver.findElement(By.id(appPackage + ":id/rocket_app_checkoutweb"));
+        Thread.sleep(2000);
+        back();
     }
 }
