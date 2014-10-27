@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 import static util.Helper.driver;
@@ -37,9 +36,9 @@ public class AppiumSetupTest {
 //        capabilities.setCapability("platformVersion", "4.3");
 
         String userDir = System.getProperty("user.dir");
-        String localApp = "Lazada_2.7.5_56_Amazon_R3.apk";
-        String appPath = Paths.get(userDir, localApp).toAbsolutePath().toString();
-        capabilities.setCapability("app", appPath);
+        String localApp = "/home/lazhcm10136/Lazada_2.7.5_56_Amazon_R3.apk";
+//        String appPath = Paths.get(userDir, localApp).toAbsolutePath().toString();
+        capabilities.setCapability("app", localApp);
         return capabilities;
     }
 }
